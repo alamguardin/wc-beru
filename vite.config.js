@@ -1,17 +1,15 @@
-import { defineConfig } from 'vite';
-import path from 'node:path';
+import { dirname, resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'vite'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
-	build: {
-		lib: {
-			entry: path.resolve(__dirname, 'src/index.js'),
-			name: 'wc-sonner',
-			fileName: (format) => `wc-sonner.${format}.js`,
-			cssFileName: 'wc-sonner-styles',
-		},
-		rollupOptions: {
-			// Evita incluir dependencias externas en el bundle
-			external: [],
-		},
-	},
-});
+    build: {
+        lib: {
+            entry: resolve(__dirname, 'lib/index.js'),
+            name: 'wc-sonner',
+            fileName: (format, entryName) => `wc-sonner${entryName}.${format}.js`
+        }
+    }
+})
