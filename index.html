@@ -52,12 +52,16 @@
     <div id="app">
       <button>Show Toast</button>
     </div>
-    <wc-sonner></wc-sonner>
+    <wc-sonner id="first"></wc-sonner>
+    <wc-sonner id="second"></wc-sonner>
     <script type="module">
       import { toast } from '/lib/index.js'
       
       document.querySelector('button').addEventListener('click', () => {
-        toast.show('Hello')
+        toast.display('Hello from wc-sonner', {
+          description: 'This is other message',
+          closeButton: true
+        })
       })
     </script>
   </body>
