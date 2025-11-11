@@ -46,16 +46,19 @@
     <div id="app">
       <button>Show Toast</button>
     </div>
-    <wc-sonner id="first" position="bottom-right"></wc-sonner>
+    <wc-sonner id="first" position="top-right"></wc-sonner>
     <wc-sonner id="second"></wc-sonner>
     <script type="module">
       import { toast } from '/lib/index.js'
+
+      let count = 1
       
       document.querySelector('button').addEventListener('click', () => {
-        toast.display('Hello from wc-sonner', {
+        toast.display(`Hi! from wc-sonner #${count}`, {
           description: 'This is other message',
           closeButton: true
         })
+        count++
       })
     </script>
   </body>
