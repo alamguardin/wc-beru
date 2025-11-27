@@ -186,3 +186,23 @@
 :host([position^="top"].expand) > .toast:nth-last-child(6) {
 	transform: translateY(calc(500% + 5rem)) !important;
 }
+
+:host([position^="bottom"].expand) > .toast:nth-last-child(2) {
+	transform: translateY(calc(-100% - 1rem)) !important;
+}
+
+:host([position^="bottom"].expand) > .toast:nth-last-child(3) {
+	transform: translateY(calc(-200% - 2rem)) !important;
+}
+
+:host([position^="bottom"].expand) > .toast:nth-last-child(4) {
+	transform: translateY(calc(-300% - 3rem)) !important;
+}
+
+:host([position^="bottom"].expand) > .toast:nth-last-child(5) {
+	transform: translateY(calc(-400% - 4rem)) !important;
+}
+
+:host([position^="bottom"].expand) > .toast:nth-last-child(6) {
+	transform: translateY(calc(-500% - 5rem)) !important;
+}
