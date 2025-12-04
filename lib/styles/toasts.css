@@ -8,29 +8,29 @@
 
 /* Custom element styles */
 :host {
-	/* Default Toast Light */
-	--bg-toast-light: #f9fafb;
-	--br-toast-light: #e5e7eb;
-	--fg-toast-title-light: #030712;
-	--fg-toast-description-light: #1e2939;
-	--fg-toast-close-normal-light: #d1d5dc;
-	--fg-toast-close-hover-light: #1e2939;
-	/* Succes Toast Light */
-	--bg-success-light: #dcfce7;
-	--br-success-light: #7bf1a8;
-	--fg-success-light: #032e15;
-	/* Error Toast Light */
-	--bg-error-light: #ffe2e2;
-	--br-error-light: #ffa2a2;
-	--fg-error-light: #460809;
-	/* Warning Toast Light */
-	--bg-warning-light: #ffedd4;
-	--br-warning-light: #ffb86a;
-	--fg-warning-light: #441306;
-	/* info Toast Light */
-	--bg-info-light: #dbeafe;
-	--br-info-light: #8ec5ff;
-	--fg-info-light: #162456;
+	/* Default Toast */
+	--bg-toast: #f9fafb;
+	--br-toast: #e5e7eb;
+	--fg-toast-title: #030712;
+	--fg-toast-description: #1e2939;
+	--fg-toast-close-normal: #d1d5dc;
+	--fg-toast-close-hover: #1e2939;
+	/* Succes Toast */
+	--bg-success: #dcfce7;
+	--br-success: #7bf1a8;
+	--fg-success: #032e15;
+	/* Error Toast */
+	--bg-error: #ffe2e2;
+	--br-error: #ffa2a2;
+	--fg-error: #460809;
+	/* Warning Toast */
+	--bg-warning: #ffedd4;
+	--br-warning: #ffb86a;
+	--fg-warning: #441306;
+	/* info Toast */
+	--bg-info: #dbeafe;
+	--br-info: #8ec5ff;
+	--fg-info: #162456;
 
 	/* Default styles */
 	position: absolute;
@@ -84,8 +84,8 @@
 	font-family:
 		system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
 		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-	background: var(--bg-toast-light);
-	border: 1px solid var(--br-toast-light);
+	background: var(--bg-toast);
+	border: 1px solid var(--br-toast);
 	border-radius: 0.625rem;
 	box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
 	transition:
@@ -110,7 +110,7 @@
 
 .toast-title {
 	font-size: 0.75rem;
-	color: var(--fg-toast-title-light);
+	color: var(--fg-toast-title);
 	font-weight: 600;
 	display: flex;
 	align-items: center;
@@ -123,7 +123,7 @@
 
 .toast-description {
 	font-size: 0.75rem;
-	color: var(--fg-toast-description-light);
+	color: var(--fg-toast-description);
 	font-weight: 400;
 	margin-top: 0.5rem;
 }
@@ -137,12 +137,12 @@
 	border: none;
 	outline: none;
 	background: none;
-	color: var(--fg-toast-close-normal-light);
+	color: var(--fg-toast-close-normal);
 	cursor: pointer;
 }
 
 .toast-close:hover {
-	color: var(--fg-toast-close-hover-light);
+	color: var(--fg-toast-close-hover);
 }
 
 .toast-close svg {
@@ -151,71 +151,71 @@
 
 /* Toast variants styles */
 :host([fullcolor]) .toast.success {
-	background: var(--bg-success-light);
-	border-color: var(--br-success-light);
+	background: var(--bg-success);
+	border-color: var(--br-success);
 }
 
 :host([fullcolor]) .toast.success .toast-title {
-	color: var(--fg-success-light);
+	color: var(--fg-success);
 }
 
 :host([fullcolor]) .toast.success .toast-description {
-	color: var(--fg-success-light);
+	color: var(--fg-success);
 }
 
 :host([fullcolor]) .toast.success .toast-close {
-	color: var(--fg-success-light);
+	color: var(--fg-success);
 }
 
 :host([fullcolor]) .toast.error {
-	background: var(--bg-error-light);
-	border-color: var(--br-error-light);
+	background: var(--bg-error);
+	border-color: var(--br-error);
 }
 
 :host([fullcolor]) .toast.error .toast-title {
-	color: var(--fg-error-light);
+	color: var(--fg-error);
 }
 
 :host([fullcolor]) .toast.error .toast-description {
-	color: var(--fg-error-light);
+	color: var(--fg-error);
 }
 
 :host([fullcolor]) .toast.error .toast-close {
-	color: var(--fg-error-light);
+	color: var(--fg-error);
 }
 
 :host([fullcolor]) .toast.warning {
-	background: var(--bg-warning-light);
-	border-color: var(--br-warning-light);
+	background: var(--bg-warning);
+	border-color: var(--br-warning);
 }
 
 :host([fullcolor]) .toast.warning .toast-title {
-	color: var(--fg-warning-light);
+	color: var(--fg-warning);
 }
 
 :host([fullcolor]) .toast.warning .toast-description {
-	color: var(--fg-warning-light);
+	color: var(--fg-warning);
 }
 
 :host([fullcolor]) .toast.warning .toast-close {
-	color: var(--fg-warning-light);
+	color: var(--fg-warning);
 }
 
 :host([fullcolor]) .toast.info {
-	background: var(--bg-info-light);
-	border-color: var(--br-info-light);
+	background: var(--bg-info);
+	border-color: var(--br-info);
 }
 
 :host([fullcolor]) .toast.info .toast-title {
-	color: var(--fg-info-light);
+	color: var(--fg-info);
 }
 
 :host([fullcolor]) .toast.info .toast-description {
-	color: var(--fg-info-light);
+	color: var(--fg-info);
 }
 
 :host([fullcolor]) .toast.info .toast-close {
-	color: var(--fg-info-light);
+	color: var(--fg-info);
 }
 
 /* Collapse toast while not hovered */
