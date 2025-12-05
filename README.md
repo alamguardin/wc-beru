@@ -1,13 +1,13 @@
-# wc-sonner
+# wc-beru
 
-Wc-Sonner is a web component Toast. It allows you to easily integrate beautiful and accessible toasts into any web project, regardless of the framework you are using.
+Wc-Beru is a web component Toast. It allows you to easily integrate beautiful and accessible toasts into any web project, regardless of the framework you are using.
 
 ## Installation
 
-To use `wc-sonner` in your project, you can install it via pnpm (or npm/yarn):
+To use `wc-beru` in your project, you can install it via pnpm (or npm/yarn):
 
 ```bash
-pnpm add wc-sonner
+pnpm add wc-beru
 ```
 
 ## Usage
@@ -16,19 +16,19 @@ Once installed, you can import and use the web component directly in your HTML o
 
 ```html
 <!-- In your HTML -->
-<wc-sonner></wc-sonner>
+<wc-beru></wc-beru>
 <div id="app">
   <button id="btn">Push me</button>
 </div>
 ```
 
 ```javascript
-import { toast } from 'wc-sonner';
+import { toast } from 'wc-beru';
 
 const button = document.getElementById('btn')
 
 button.addEventListener('click', () => {
-  toast.display('Hello world from WcSonner')
+  toast.display('Hello world from WcBeru')
 })
 ```
 
@@ -39,7 +39,7 @@ To set up the project locally, follow these steps:
 1. **Clone the repository:**
    ```bash
    git clone [repository-url]
-   cd wc-sonner
+   cd wc-beru
    ```
 
 2. **Install dependencies:**
