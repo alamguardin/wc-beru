@@ -38,6 +38,32 @@
 	height: max-content;
 }
 
+:host([theme="dark"]) {
+	/* Default Toast */
+	--bg-toast: #18181b;
+	--br-toast: #27272a;
+	--fg-toast-title: #e4e4e7;
+	--fg-toast-description: #9f9fa9;
+	--fg-toast-close-normal: #9f9fa9;
+	--fg-toast-close-hover: #e4e4e7;
+	/* Succes Toast */
+	--bg-success: #032e15;
+	--br-success: #0d542b;
+	--fg-success: #f0fdf4;
+	/* Error Toast */
+	--bg-error: #460809;
+	--br-error: #82181a;
+	--fg-error: #fef2f2;
+	/* Warning Toast */
+	--bg-warning: #432004;
+	--br-warning: #733e0a;
+	--fg-warning: #fefce8;
+	/* info Toast */
+	--bg-info: #162456;
+	--br-info: #1c398e;
+	--fg-info: #eff6ff;
+}
+
 :host,
 :host([position="bottom-right"]) {
 	bottom: 1.5rem;
