@@ -1,3 +1,8 @@
+:root {
+	font-size: 16px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 *,
 *::before,
 *::after {
@@ -5,20 +10,26 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+/* 
 body:has(wc-beru[theme="dark"]) {
 	background: #09090b;
-}
+} */
 
 #app {
-	width: 100%;
-	height: 100dvh;
+	width: 90%;
+	margin: 7.5rem auto;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 }
 
-button {
+section {
+	margin-top: 5rem;
+	text-align: center;
+}
+
+section button {
+	margin-top: 3.75rem;
 	padding: 0.75rem 1.5rem;
 	background: #f1f5f9;
 	outline: none;

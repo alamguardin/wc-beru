@@ -33,7 +33,7 @@
 	--fg-info: #162456;
 
 	/* Default styles */
-	position: absolute;
+	position: fixed;
 	width: 300px;
 	height: max-content;
 }

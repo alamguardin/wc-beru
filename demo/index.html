@@ -7,12 +7,42 @@
     <title>wc-beru</title>
   </head>
   <body>
-    <!-- Custom Element -->
-    <wc-beru fullcolor></wc-beru>
-    <wc-beru fullcolor position="top-center" id="second" theme="dark"></wc-beru>
+    <!-- Simple Toast -->
+    <wc-beru></wc-beru>
+    <!-- Positions -->
+    <wc-beru id="positions"></wc-beru>
+    <!-- Fullcolor -->
+    <wc-beru id="fullcolor" fullcolor></wc-beru>
+    <!-- Theme -->
+    <wc-beru id="theme" theme="dark"></wc-beru>
     <!-- App Container -->
     <div id="app">
-      <button id="defaultButton">Show Toast</button>
+      <h1>WcBeru Examples</h1>
+      <section>
+        <h2>Simple Toast</h2>
+        <button id="defaultButton">Show Toast</button>
+      </section>
+      <section id="section-positions">
+        <h2>Positions</h2>
+        <button id="btn-tl">top-left</button>
+        <button id="btn-tc">top-center</button>
+        <button id="btn-tr">top-right</button>
+        <br>
+        <button id="btn-bl">bottom-left</button>
+        <button id="btn-bc">bottom-center</button>
+        <button id="btn-br">bottom-right</button>
+      </section>
+      <section id="section-fullcolor">
+        <h2>Full Color</h2>
+        <button id="btn-success">Success</button>
+        <button id="btn-error">Error</button>
+        <button id="btn-info">Info</button>
+        <button id="btn-warning">Warning</button>
+      </section>
+      <section>
+        <h2>Theme</h2>
+        <button id="btn-dark">Dark Theme</button>
+      </section>
     </div>
     <!-- Test Code -->
     <script type="module" src="main.js"></script>
