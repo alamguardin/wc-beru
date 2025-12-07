@@ -36,6 +36,7 @@
 	position: fixed;
 	width: 300px;
 	height: max-content;
+	z-index: 99999;
 }
 
 :host([theme="dark"]) {
