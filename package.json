@@ -15,7 +15,9 @@
 	},
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
+		"build:js": "vite build",
+		"build:types": "tsc --build",
+		"build": "pnpm build:js && pnpm build:types",
 		"preview": "vite preview"
 	},
 	"devDependencies": {
