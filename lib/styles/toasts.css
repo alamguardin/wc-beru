@@ -34,7 +34,7 @@
 
 	/* Default styles */
 	position: fixed;
-	width: 300px;
+	width: 18.75rem;
 	height: max-content;
 	z-index: 99999;
 }
@@ -73,7 +73,7 @@
 
 :host([position="bottom-center"]) {
 	bottom: 1.5rem;
-	right: calc(50% - 300px);
+	right: calc(50% - 18.75rem);
 	transform: translateX(-50%);
 }
 
@@ -89,7 +89,7 @@
 
 :host([position="top-center"]) {
 	top: 1.5rem;
-	right: calc(50% - 300px);
+	right: calc(50% - 18.75rem);
 	transform: translateX(-50%);
 }
 
@@ -249,14 +249,31 @@
 :host([position^="top"]) {
 	.toast {
 		top: 0;
-		right: 0;
 	}
 }
 
-:host,
+:host(:not([position])),
 :host([position^="bottom"]) {
 	.toast {
 		bottom: 0;
+	}
+}
+
+:host([position$="left"]) {
+	.toast {
+		left: 0;
+	}
+}
+
+:host([position$="center"]) {
+	.toast {
+		margin: auto;
+	}
+}
+
+:host(:not([position])),
+:host([position$="right"]) {
+	.toast {
 		right: 0;
 	}
 }
