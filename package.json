@@ -9,6 +9,7 @@
 	"module": "./dist/wc-beru-es.js",
 	"exports": {
 		".": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/wc-beru-es.js",
 			"require": "./dist/wc-beru-umd.js"
 		}
