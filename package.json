@@ -17,6 +17,7 @@
 	"types": "./dist/index.d.ts",
 	"scripts": {
 		"dev": "vite",
+		"build:css": "node process-css.js",
 		"build:js": "vite build",
 		"build:types": "tsc --build",
 		"build": "pnpm build:js && pnpm build:types",
@@ -24,6 +25,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.3.7",
+		"lightningcss": "^1.30.2",
 		"typescript": "^5.9.3",
 		"vite": "npm:rolldown-vite@7.1.14"
 	},
