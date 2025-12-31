@@ -1,0 +1,273 @@
+---
+import icon from '../assets/wc-beru.svg'
+import Javascript from './icons/Javascript.astro'
+import React from './icons/React.astro'
+import Vue from './icons/Vue.astro'
+import Angular from './icons/Angular.astro'
+import Astroo from './icons/Astro.astro'
+---
+
+
+<div class="container">
+	<header class="hero">
+		<figure class="hero-brand">
+			<img src={icon.src} alt="wc-beru icon" width="100">
+		</figure>
+		<h1 class="hero-title">wc-beru</h1>
+		<p class="hero-author">Created by <a href="https://github.com/alamguardin">@alamguardin</a></p>
+		<p class="hero-description">Beautiful and accessible toasts web component.</p>
+		<div class="hero-actions">
+			<button role="button" class="hero-btn-dark" id="example">Show toast</button>
+			<a href="https://github.com/alamguardin/wc-beru-docs/wiki/Introduction" role="button" class="hero-btn-light">Documentation</a>
+		</div>
+	</header>
+	<section class="integration">
+		<h2 class="integration-title">Easy to integrate into any framework</h2>
+		<div class="integration-grid">
+			<div class="integration-row">
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+			</div>
+			<div class="integration-row">
+				<div class="integration-box"></div>
+				<div class="integration-box"><Javascript></Javascript></div>
+				<div class="integration-box"><React></React></div>
+				<div class="integration-box"><Vue></Vue></div>
+				<div class="integration-box"><Angular></Angular></div>
+				<div class="integration-box"><Astroo></Astroo></div>
+				<div class="integration-box"></div>
+			</div>
+			<div class="integration-row">
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+				<div class="integration-box"></div>
+			</div>
+		</div>
+	</section>
+	<section class="example">
+		<h3 class="example-title">Here are just a few examples; find more in the <a href="https://github.com/alamguardin/wc-beru-docs/wiki/Introduction">documentation</a>.</h3>
+		<div class="example-feature">
+			<h4 class="example-feature-title">Variants</h4>
+			<p class="example-feature-description">You can choose the type of toast you want to display</p>
+			<div class="example-feature-actions">
+				<button class="example-btn" id="default">Default</button>
+				<button class="example-btn" id="success">Success</button>
+				<button class="example-btn" id="info">Info</button>
+				<button class="example-btn" id="error">Error</button>
+				<button class="example-btn" id="warning">Warning</button>
+			</div>
+		</div>
+		<div class="example-feature">
+			<h4 class="example-feature-title">Positions</h4>
+			<p class="example-feature-description">Change the position in which the toast is displayed.</p>
+			<div class="example-feature-actions">
+				<button class="example-btn" id="top-left">Top left</button>
+				<button class="example-btn" id="top-center">Top center</button>
+				<button class="example-btn" id="top-right">Top right</button>
+				<button class="example-btn" id="bottom-left">Bottom left</button>
+				<button class="example-btn" id="bottom-center">Bottom center</button>
+				<button class="example-btn" id="bottom-right">Bottom right</button>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<p class="footer-copy">Copyright (c) 2025 Alam Guardin</p>
+	</footer>
+</div>
+
+<style>
+	.container {
+		margin: auto;
+		max-width: 800px;
+		width: 90%;
+	}
+
+	.hero {
+		margin: 6rem 0;
+		text-align: center;
+	}
+
+	.hero-title {
+		font-size: 4rem;
+		font-weight: 600;
+		color: var(--fg-title);
+	}
+
+	.hero-author {
+		font-size: 0.875rem;
+		color: var(--fg-title);
+	}
+
+	.hero-author a {
+		text-decoration: none;
+		color: var(--fg-link);
+	}
+
+	.hero-description {
+		margin: 48px 0 28px 0;
+	}
+
+	.hero-btn-dark, .hero-btn-light {
+		font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		font-size: 0.875rem;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		cursor: pointer;
+		transition: .2s all ease;
+	}
+
+	.hero-btn-dark:hover, .hero-btn-light:hover {
+		translate: 0 -0.25rem;
+	}
+
+
+	.hero-btn-dark:active, .hero-btn-light:active {
+		scale: 0.95;
+	}
+
+	.hero-btn-dark {
+		background: var(--bg-button-dark);
+		color: var(--fg-button-dark);
+		border: none;
+	}
+
+	.hero-btn-light {
+		background: var(--bg-button-light);
+		color: var(--fg-button-light);
+		border: 2px solid var(--br-button-light);
+	}
+
+	.integration {
+		text-align: center;
+	}
+
+	.integration-title {
+		font-weight: 500;
+		font-size: 2.25rem;
+		color: var(--fg-title);
+	}
+
+	.integration-grid {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.875rem;
+	}
+
+	.integration-row {
+		display: flex;
+		gap: 0.875rem;
+	}
+
+	.integration-box {
+		width: 3rem;
+		height: 3rem;
+		padding: 8px;
+		border: 2px solid var(--br-button-light);
+		border-radius: 0.75rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.integration-row:nth-child(1),
+	.integration-row:nth-child(3)  {
+		.integration-box:first-child,
+		.integration-box:last-child {
+			opacity: 0.4;
+		}
+
+		.integration-box:nth-child(2),
+		.integration-box:nth-child(4) {
+			opacity: 0.6;
+		}
+
+		.integration-box:nth-child(3) {
+			opacity: 0.8;
+		}
+	}
+
+	.integration-row:nth-child(2) {
+		.integration-box:first-child,
+		.integration-box:last-child {
+			opacity: 0.2;
+		}
+	}
+
+	.example {
+		margin: 6rem 0;
+	}
+
+	.example-title {
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: var(--fg-title);
+		text-align: center;
+	}
+
+	.example-title a {
+		color: var(--fg-link);
+	}
+
+	.example-feature {
+		margin-top: 3rem;
+	}
+
+	.example-feature-title {
+		font-size: 1.125rem;
+		font-weight: 500;
+		margin-bottom: 1rem;
+	}
+
+	.example-feature-description {
+		color: var(--fg-text);
+	}
+
+	.example-feature-actions {
+		margin: 6rem auto 6rem auto;
+		max-width: 450px;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 14px;
+	}
+
+	.example-btn {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		background: var(--bg-button-light);
+		font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+		font-size: 0.875rem;
+		text-decoration: none;
+		border: 2px solid var(--br-button-light);
+		border-radius: 0.5rem;
+		transition: .2s all ease;
+		cursor: pointer;
+	}
+
+	.example-btn:hover {
+		translate: 0 -4px;
+	}
+
+	.example-btn:active {
+		scale: 0.95;
+	}
+
+	.footer {
+		text-align: center;
+		margin-bottom: 48px;
+	}
+
+	.footer-copy {
+		color: var(--fg-text);
+	}
+</style>

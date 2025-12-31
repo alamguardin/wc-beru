@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<wc-beru fullcolor></wc-beru>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Lora:wght@500&display=swap');
+
+	:root {
+		--bg-body: #F9FAFB;
+		--fg-title: #020618;
+		--fg-text: #314158;
+		--fg-link: #2B7FFF;
+		--bg-button-dark: #020618;
+		--fg-button-dark: #F9FAFB;
+		--bg-button-light: #F1F5F9;
+		--br-button-light: #E2E8F0;
+		--fg-button-light: #020618;
+		font-family: 'Inconsolata', 'Courier New', Courier, monospace;
+		font-size: 16px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Lora', 'Times New Roman', Times, serif;
+	}
+
+	*, *::before, *::after {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	@media screen and (max-width: 768px) {
+		:root {
+			font-size: 0.875rem;
+		}
+	}
+</style>

@@ -1,0 +1,105 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<Welcome />
+</Layout>
+
+<script>
+import { toast } from "wc-beru"
+
+	document.addEventListener('click', (e) => {
+		if (e.target) {
+			const element = e.target as HTMLElement
+
+			if (element.id === 'example') {
+				toast.display('Hello from wc-beru', {
+					description: 'This is a default toast component'
+				})
+			}
+
+			if (element.id === 'default') {
+				toast.display('Application update available.', {
+					description: 'Click to install the latest version and access new features.'
+				});
+			}
+
+			if (element.id === 'success') {
+				toast.success('Changes saved successfully.', {
+					description: 'Your user profile has been updated and the data is secure.'
+				});
+			}
+
+			if (element.id === 'info') {
+				toast.info('Low power mode activated.', {
+					description: 'The application has reduced resource usage to save battery.'
+				});
+			}
+
+			if (element.id === 'error') {
+				toast.error('Server connection failed.', {
+					description: 'Could not sync information. Please check your internet connection.'
+				});
+			}
+			
+			if (element.id === 'warning') {
+				toast.warning('Your session is about to expire.', {
+					description: 'For security reasons, the session will close in 5 minutes due to inactivity.'
+				});
+			}
+
+			if (element.id === 'top-left') {
+				const toaster = document.querySelector('wc-beru')
+				toaster?.setAttribute('position', 'top-left')
+				toast.display('Application update available.', {
+					description: 'Click to install the latest version and access new features.'
+				});
+			}
+
+			if (element.id === 'top-center') {
+				const toaster = document.querySelector('wc-beru')
+				toaster?.setAttribute('position', 'top-center')
+				toast.display('Application update available.', {
+					description: 'Click to install the latest version and access new features.'
+				});
+			}
+
+			if (element.id === 'top-right') {
+				const toaster = document.querySelector('wc-beru')
+				toaster?.setAttribute('position', 'top-right')
+				toast.display('Application update available.', {
+					description: 'Click to install the latest version and access new features.'
+				});
+			}
+
+			if (element.id === 'bottom-left') {
+				const toaster = document.querySelector('wc-beru')
+				toaster?.setAttribute('position', 'bottom-left')
+				toast.display('Application update available.', {
+					description: 'Click to install the latest version and access new features.'
+				});
+			}
+
+			if (element.id === 'bottom-center') {
+				const toaster = document.querySelector('wc-beru')
+				toaster?.setAttribute('position', 'bottom-center')
+				toast.display('Application update available.', {
+					description: 'Click to install the latest version and access new features.'
+				});
+			}
+
+			if (element.id === 'bottom-right') {
+				const toaster = document.querySelector('wc-beru')
+				toaster?.setAttribute('position', 'bottom-right')
+				toast.display('Application update available.', {
+					description: 'Click to install the latest version and access new features.'
+				});
+			}
+		}
+	})
+</script>
