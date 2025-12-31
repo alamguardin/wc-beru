@@ -21,7 +21,8 @@
 		"build:css": "node process-css.js",
 		"build:js": "vite build",
 		"build:types": "tsc --build",
-		"build": "pnpm build:js && pnpm build:types",
+		"build:web": "pnpm --filter wc-beru-docs build",
+		"build": "pnpm build:js && pnpm build:types && pnpm build:web",
 		"preview": "vite preview"
 	},
 	"devDependencies": {
