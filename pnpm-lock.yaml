@@ -30,8 +30,8 @@ importers:
         specifier: ^5.16.5
         version: 5.16.6(@types/node@25.0.3)(typescript@5.9.3)
       wc-beru:
-        specifier: ^0.1.5
-        version: 0.1.6
+        specifier: workspace:*
+        version: link:..
 
 packages:
 
@@ -1598,9 +1598,6 @@ packages:
     peerDependenciesMeta:
       vite:
         optional: true
-
-  wc-beru@0.1.6:
-    resolution: {integrity: sha512-BWkDXwQzbQSaFB4dXzW51qd66LS3fAjef58LeeX9sZ+0lGLo0vaMHpwvofyV5FHFn60ZtX9g8M6euiEoDDH2kQ==}
 
   web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
@@ -3398,8 +3395,6 @@ snapshots:
   vitefu@1.1.1(rolldown-vite@7.1.14(@types/node@25.0.3)(esbuild@0.25.12)):
     optionalDependencies:
       vite: rolldown-vite@7.1.14(@types/node@25.0.3)(esbuild@0.25.12)
-
-  wc-beru@0.1.6: {}
 
   web-namespaces@2.0.1: {}
 
