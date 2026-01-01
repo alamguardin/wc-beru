@@ -16,11 +16,21 @@ btn.addEventListener('click', () => {
 
 // Positions toast example
 const sectionPositions = document.getElementById('section-positions');
-const toasterPositions = document.getElementById('positions');
+
+function createToaster(position) {
+	document.getElementById('positions').remove();
+
+	const toasterElement = document.createElement('wc-beru');
+	toasterElement.setAttribute('id', 'positions');
+	toasterElement.setAttribute('position', position);
+
+	const nodeRef = document.body.firstChild;
+	document.body.insertBefore(toasterElement, nodeRef);
+}
 
 sectionPositions.addEventListener('click', (e) => {
 	if (e.target.id === 'btn-tl') {
-		toasterPositions.setAttribute('position', 'top-left');
+		createToaster('top-left');
 		toast.display('Hello from wc-beru', {
 			description: 'Toast in top left position',
 			beruId: 'positions',
@@ -28,7 +38,7 @@ sectionPositions.addEventListener('click', (e) => {
 	}
 
 	if (e.target.id === 'btn-tc') {
-		toasterPositions.setAttribute('position', 'top-center');
+		createToaster('top-center');
 		toast.display('Hello from wc-beru', {
 			description: 'Toast in top center position',
 			beruId: 'positions',
@@ -36,7 +46,7 @@ sectionPositions.addEventListener('click', (e) => {
 	}
 
 	if (e.target.id === 'btn-tr') {
-		toasterPositions.setAttribute('position', 'top-right');
+		createToaster('top-right');
 		toast.display('Hello from wc-beru', {
 			description: 'Toast in top right position',
 			beruId: 'positions',
@@ -44,7 +54,7 @@ sectionPositions.addEventListener('click', (e) => {
 	}
 
 	if (e.target.id === 'btn-bl') {
-		toasterPositions.setAttribute('position', 'bottom-left');
+		createToaster('bottom-left');
 		toast.display('Hello from wc-beru', {
 			description: 'Toast in bottom left position',
 			beruId: 'positions',
@@ -52,7 +62,7 @@ sectionPositions.addEventListener('click', (e) => {
 	}
 
 	if (e.target.id === 'btn-bc') {
-		toasterPositions.setAttribute('position', 'bottom-center');
+		createToaster('bottom-center');
 		toast.display('Hello from wc-beru', {
 			description: 'Toast in bottom center position',
 			beruId: 'positions',
@@ -60,7 +70,7 @@ sectionPositions.addEventListener('click', (e) => {
 	}
 
 	if (e.target.id === 'btn-br') {
-		toasterPositions.setAttribute('position', 'bottom-right');
+		createToaster('bottom-right');
 		toast.display('Hello from wc-beru', {
 			description: 'Toast in bottom right position',
 			beruId: 'positions',
