@@ -11,7 +11,22 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-import { toast } from "wc-beru"
+	import { toast } from "wc-beru"
+
+	function createToaster(position:string) {
+		const existingToaster = document.getElementById('positions');
+		if (existingToaster) {
+			existingToaster.remove();
+		}
+
+		const toasterElement = document.createElement('wc-beru');
+		toasterElement.setAttribute('id', 'positions');
+		toasterElement.setAttribute('fullcolor', '');
+		toasterElement.setAttribute('position', position);
+
+		const nodeRef = document.body.firstChild;
+		document.body.insertBefore(toasterElement, nodeRef);
+	}
 
 	document.addEventListener('click', (e) => {
 		if (e.target) {
@@ -54,48 +69,42 @@ import { toast } from "wc-beru"
 			}
 
 			if (element.id === 'top-left') {
-				const toaster = document.querySelector('wc-beru')
-				toaster?.setAttribute('position', 'top-left')
+				createToaster('top-left')
 				toast.display('Application update available.', {
 					description: 'Click to install the latest version and access new features.'
 				});
 			}
 
 			if (element.id === 'top-center') {
-				const toaster = document.querySelector('wc-beru')
-				toaster?.setAttribute('position', 'top-center')
+				createToaster('top-center')
 				toast.display('Application update available.', {
 					description: 'Click to install the latest version and access new features.'
 				});
 			}
 
 			if (element.id === 'top-right') {
-				const toaster = document.querySelector('wc-beru')
-				toaster?.setAttribute('position', 'top-right')
+				createToaster('top-right')
 				toast.display('Application update available.', {
 					description: 'Click to install the latest version and access new features.'
 				});
 			}
 
 			if (element.id === 'bottom-left') {
-				const toaster = document.querySelector('wc-beru')
-				toaster?.setAttribute('position', 'bottom-left')
+				createToaster('bottom-left')
 				toast.display('Application update available.', {
 					description: 'Click to install the latest version and access new features.'
 				});
 			}
 
 			if (element.id === 'bottom-center') {
-				const toaster = document.querySelector('wc-beru')
-				toaster?.setAttribute('position', 'bottom-center')
+				createToaster('bottom-center')
 				toast.display('Application update available.', {
 					description: 'Click to install the latest version and access new features.'
 				});
 			}
 
 			if (element.id === 'bottom-right') {
-				const toaster = document.querySelector('wc-beru')
-				toaster?.setAttribute('position', 'bottom-right')
+				createToaster('bottom-right')
 				toast.display('Application update available.', {
 					description: 'Click to install the latest version and access new features.'
 				});
