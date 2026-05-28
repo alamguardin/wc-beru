@@ -126,6 +126,28 @@
 	}
 }
 
+:host([position="bottom-center"]) .toast {
+	transform: translateY(0);
+	@starting-style {
+		transform: translateY(25px);
+	}
+}
+
+:host([position="bottom-right"]) .toast,
+:host([position="top-right"]) .toast {
+	transform: translateX(0);
+	@starting-style {
+		transform: translateX(25px);
+	}
+}
+
+:host([position="top-center"]) .toast {
+	transform: translateY(0);
+	@starting-style {
+		transform: translateY(-25px);
+	}
+}
+
 .toast.hide {
 	opacity: 0 !important;
 }
