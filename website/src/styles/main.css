@@ -1,0 +1,133 @@
+@font-face {
+	font-family: "Satoshi-Medium";
+	src: url("../fonts/Satoshi-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Satoshi-Bold";
+	src: url("../fonts/Satoshi-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Departure-Mono";
+	src: url("../fonts/DepartureMono-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+
+:root {
+	--color-bg-primary: #fafafa;
+	--color-bg-secundary: #f3f4f6;
+	--color-text-primary: #030712;
+	--color-text-secundary: #4a5565;
+	--colot-br-default: #d1d5dc;
+
+	font-size: 16px;
+	font-family: "Satoshi-Medium", sans-serif;
+	color: var(--color-text-secundary);
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Satoshi-Bold", sans-serif;
+	color: var(--color-text-primary);
+}
+
+code {
+	font-family: "Departure-Mono", monospace;
+}
+
+button,
+[type="submit"] {
+	cursor: pointer;
+}
+
+.container {
+	max-width: 40rem;
+	margin: auto;
+}
+
+/* ---- Hero section styles ---- */
+.hero {
+	margin-top: 6rem;
+}
+
+.hero-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero-icon {
+	width: 4rem;
+}
+
+.hero-title {
+	font-size: 2.25rem;
+	margin-top: 1.125rem;
+}
+
+.hero-caption {
+	margin-top: 0.75rem;
+}
+
+.hero-fragment {
+	margin-top: 2rem;
+	padding: 7px 7px 7px 12px;
+	background: var(--color-bg-secundary);
+	border-radius: 0.5rem;
+	border: 1px solid var(--colot-br-default);
+	box-shadow: inset 0 0 0 2px var(--color-bg-primary);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.875rem;
+}
+
+.hero-fragment-field {
+	max-width: 100%;
+	width: fit-content;
+	border: none;
+	outline: none;
+	background: none;
+	font-family: "Departure-Mono", monospace;
+}
+
+.hero-fragment-button {
+	padding: 0.25rem;
+	background: var(--color-bg-primary);
+	color: var(--color-text-secundary);
+	border-radius: 0.25rem;
+	border: 1px solid var(--colot-br-default);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.2s all ease;
+}
+
+.hero-fragment-button:active {
+	transform: scale(0.9) translateY(1px);
+}
+
+.hero-fragment-button svg {
+	width: 1rem;
+}
