@@ -52,8 +52,32 @@ h6 {
 	color: var(--color-text-primary);
 }
 
+h2 {
+	margin-bottom: 0.75rem;
+}
+
+pre {
+	margin: 1.5rem 0;
+	padding: 1rem;
+	border: 1px solid var(--colot-br-default);
+	border-radius: 0.75rem;
+}
+
 code {
 	font-family: "Departure-Mono", monospace;
+	font-size: 0.875rem;
+}
+
+p > span {
+	font-family: monospace;
+	font-size: 0.875rem;
+	background: var(--color-bg-secundary);
+	padding: 0.25rem;
+	border-radius: 0.125rem;
+}
+
+p:has(+ p) {
+	margin-bottom: 1.5rem;
 }
 
 button,
