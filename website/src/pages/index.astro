@@ -2,6 +2,7 @@
 /** biome-ignore-all lint/correctness/noUnusedImports: false positive */
 import { Code } from 'astro:components';
 import HeroSection from '../components/HeroSection.astro';
+import UsageExample from '../components/examples/UsageExample.astro';
 import Layout from '../layouts/Layout.astro';
 
 const usageExampleOne = `<wc-beru></wc-beru>
@@ -45,7 +46,9 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 		<Code code={usageExampleTwo} theme="catppuccin-latte" lang="js"></Code>
 		<p>Al importar <span>toasts</span>, este por si mismo detecta si hay una instancia de nuestro elemento <span>wc-beru</span>.</p>
 		<p>En el ejemplo de arriba llamamos a un método <span>display</span>, este nos permite renderizar  nuestro toast; inténtalo tu mismo: </p>
-		<!-- Ejemplo -->
+		<UsageExample>
+			<wc-beru></wc-beru>
+		</UsageExample>
 		<p>Cabe resaltar que <span>display</span> no es el único método disponible, <span>toast</span> ofrece otros métodos semánticos con diferentes estilos; mas adelante los conocerás.</p>
 	</section>
 	<section class="container">
@@ -86,15 +89,12 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 </Layout>
 
 <script>
-	// import { toast } from "wc-beru"
-	// import { codeToHtml } from 'shiki';
+	import { toast } from "wc-beru"
 
-	// const code = 'const a = 1'; // input code
-	// const html = await codeToHtml(code, {
-	// 	lang: 'javascript',
-	// 	theme: 'vitesse-dark',
-	// });
+	// Usage section script example
+	const usageButton = document.getElementById('usageButton')
 
-	// const target = document.getElementById('result')
-	// if (target) target.innerHTML = html
+	usageButton?.addEventListener('click', () => {
+		toast.display('👋 Hi! from wc-beru')
+	})
 </script>

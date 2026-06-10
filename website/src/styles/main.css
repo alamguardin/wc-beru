@@ -96,6 +96,7 @@ p:has(+ p) {
 
 button,
 [type="submit"] {
+	font-family: "Satoshi-Medium", sans-serif;
 	cursor: pointer;
 }
 
@@ -168,4 +169,31 @@ button,
 
 .hero-fragment-button svg {
 	width: 1rem;
+}
+
+/* ---- Example block styles ---- */
+.example {
+	margin: 1.5rem 0;
+	border-radius: 0.75rem;
+	border: 1px solid var(--colot-br-default);
+	min-height: 18.75rem;
+	background: var(--color-bg-secundary);
+	box-shadow: inset 0 0 0 2px var(--color-bg-primary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.example-button {
+	padding: 0.25rem 1.5rem;
+	font-size: 0.75rem;
+	color: var(--color-text-primary);
+	background: var(--color-bg-primary);
+	border: 1px solid var(--colot-br-default);
+	border-radius: 0.25rem;
+	transition: 0.2s all ease;
+}
+
+.example-button:active {
+	transform: scale(0.9) translateY(1px);
 }
