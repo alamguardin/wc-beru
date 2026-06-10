@@ -53,6 +53,7 @@ h6 {
 }
 
 h2 {
+	margin-top: 2rem;
 	margin-bottom: 0.75rem;
 }
 
@@ -68,7 +69,15 @@ code {
 	font-size: 0.875rem;
 }
 
-p > span {
+ul {
+	margin-left: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+p > span,
+li > span {
 	font-family: monospace;
 	font-size: 0.875rem;
 	background: var(--color-bg-secundary);
