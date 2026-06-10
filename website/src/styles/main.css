@@ -76,6 +76,11 @@ ul {
 	gap: 1rem;
 }
 
+p {
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+}
+
 p > span,
 li > span {
 	font-family: monospace;
