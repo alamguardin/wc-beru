@@ -184,6 +184,15 @@ button,
 	align-items: center;
 }
 
+.example-group {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
 .example-button {
 	padding: 0.25rem 1.5rem;
 	font-size: 0.75rem;

@@ -3,6 +3,8 @@
 import { Code } from 'astro:components';
 import HeroSection from '../components/HeroSection.astro';
 import UsageExample from '../components/examples/UsageExample.astro';
+import ParamsExample from '../components/examples/ParamsExample.astro';
+import PositionsExample from '../components/examples/PositionsExample.astro';
 import Layout from '../layouts/Layout.astro';
 
 const usageExampleOne = `<wc-beru></wc-beru>
@@ -37,6 +39,7 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 ---
 
 <Layout>
+	<wc-beru id="beru"></wc-beru>
 	<HeroSection></HeroSection>
 	<section class="container">
 		<h2>Uso</h2>
@@ -47,7 +50,6 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 		<p>Al importar <span>toasts</span>, este por si mismo detecta si hay una instancia de nuestro elemento <span>wc-beru</span>.</p>
 		<p>En el ejemplo de arriba llamamos a un método <span>display</span>, este nos permite renderizar  nuestro toast; inténtalo tu mismo: </p>
 		<UsageExample>
-			<wc-beru></wc-beru>
 		</UsageExample>
 		<p>Cabe resaltar que <span>display</span> no es el único método disponible, <span>toast</span> ofrece otros métodos semánticos con diferentes estilos; mas adelante los conocerás.</p>
 	</section>
@@ -60,10 +62,12 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 			<li><span>closeButton</span> (boolean), renderiza un botón para eliminar el toast.</li>
 			<li><span>beruId</span> (string), renderiza el toast en una instancia de <span>wc-beru</span> especifica; mas adelante veremos un ejemplo.</li>
 		</ul>
+		<ParamsExample></ParamsExample>
 	</section>
 	<section class="container">
 		<h2>Posiciones</h2>
 		<p>Nuestro elemento <span>wc-beru</span> recibe un atributo <span>position</span>, dicho atributo nos permite indicar en que posición queremos que se renderize nuestro toast y solo existen seis posibles valores los cuales conocerás a continuación:</p>
+		<PositionsExample></PositionsExample>
 	</section>
 	<section class="container">
 		<h2>Tema</h2>
@@ -96,5 +100,52 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 
 	usageButton?.addEventListener('click', () => {
 		toast.display('👋 Hi! from wc-beru')
+	})
+
+	// Optional params secion script example
+	const optionalParamsButton = document.getElementById('optional-params')
+
+	optionalParamsButton?.addEventListener('click', () => {
+		toast.display('Hi Jhon', {
+			description: 'This is a message from wc-beru',
+			closeButton: true
+		})
+	})
+
+	// Positoins section script example
+	const positionButtonsContainer = document.getElementById('positions')
+
+	positionButtonsContainer?.addEventListener('click', (e) => {
+		const toaster = document.getElementById('beru')
+
+		if ((e.target as Element).id === 'position-top-left') {
+			toaster?.setAttribute('position', 'top-left')
+			toast.display('Hello from top-left')
+		
+		}
+		if ((e.target as Element).id === 'position-top-center') {
+			toaster?.setAttribute('position', 'top-center')
+			toast.display('Hello from top-center')
+		
+		}
+		if ((e.target as Element).id === 'position-top-right') {
+			toaster?.setAttribute('position', 'top-right')
+			toast.display('Hello from top-right')
+		}
+
+		if ((e.target as Element).id === 'position-bottom-left') {
+			toaster?.setAttribute('position', 'bottom-left')
+			toast.display('Hello from bottom-left')
+		
+		}
+		if ((e.target as Element).id === 'position-bottom-center') {
+			toaster?.setAttribute('position', 'bottom-center')
+			toast.display('Hello from bottom-center')
+		
+		}
+		if ((e.target as Element).id === 'position-bottom-right') {
+			toaster?.setAttribute('position', 'bottom-right')
+			toast.display('Hello from bottom-right')
+		}
 	})
 </script>
