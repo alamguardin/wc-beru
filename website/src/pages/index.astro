@@ -115,36 +115,50 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 	// Positoins section script example
 	const positionButtonsContainer = document.getElementById('positions')
 
+	function renderToaster(position: string) {
+		const toaster = document.createElement('wc-beru')
+		toaster.setAttribute('id', 'beru')
+		toaster.setAttribute('position', position)
+		
+		document.body.insertBefore(toaster, document.body.firstChild)
+	}
+
 	positionButtonsContainer?.addEventListener('click', (e) => {
 		const toaster = document.getElementById('beru')
 
 		if ((e.target as Element).id === 'position-top-left') {
-			toaster?.setAttribute('position', 'top-left')
+			toaster?.remove()
+			renderToaster('top-left')
 			toast.display('Hello from top-left')
 		
 		}
 		if ((e.target as Element).id === 'position-top-center') {
-			toaster?.setAttribute('position', 'top-center')
+			toaster?.remove()
+			renderToaster('top-center')
 			toast.display('Hello from top-center')
 		
 		}
 		if ((e.target as Element).id === 'position-top-right') {
-			toaster?.setAttribute('position', 'top-right')
+			toaster?.remove()
+			renderToaster('top-right')
 			toast.display('Hello from top-right')
 		}
 
 		if ((e.target as Element).id === 'position-bottom-left') {
-			toaster?.setAttribute('position', 'bottom-left')
+			toaster?.remove()
+			renderToaster('bottom-left')
 			toast.display('Hello from bottom-left')
 		
 		}
 		if ((e.target as Element).id === 'position-bottom-center') {
-			toaster?.setAttribute('position', 'bottom-center')
+			toaster?.remove()
+			renderToaster('bottom-center')
 			toast.display('Hello from bottom-center')
 		
 		}
 		if ((e.target as Element).id === 'position-bottom-right') {
-			toaster?.setAttribute('position', 'bottom-right')
+			toaster?.remove()
+			renderToaster('bottom-right')
 			toast.display('Hello from bottom-right')
 		}
 	})
