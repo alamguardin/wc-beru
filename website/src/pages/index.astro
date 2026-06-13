@@ -6,6 +6,7 @@ import UsageExample from '../components/examples/UsageExample.astro';
 import ParamsExample from '../components/examples/ParamsExample.astro';
 import PositionsExample from '../components/examples/PositionsExample.astro';
 import Layout from '../layouts/Layout.astro';
+import ThemeExample from '../components/examples/ThemeExample.astro';
 
 const usageExampleOne = `<wc-beru></wc-beru>
 <div id="app">
@@ -39,7 +40,7 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 ---
 
 <Layout>
-	<wc-beru id="beru"></wc-beru>
+	<wc-beru id="beru" theme="light"></wc-beru>
 	<HeroSection></HeroSection>
 	<section class="container">
 		<h2>Uso</h2>
@@ -72,6 +73,7 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 	<section class="container">
 		<h2>Tema</h2>
 		<p><span>wc-beru</span> además posee un atributo <span>theme</span> el cual recibe dos posibles valores <span>light</span> (valor por defecto) y <span>dark</span>, permitiendo cambiar de modo claro a oscuro o viceversa al momento de renderizar el toast.</p>
+		<ThemeExample></ThemeExample>
 	</section>
 	<section class="container">
 		<h2>Tipos</h2>
@@ -161,5 +163,31 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 			renderToaster('bottom-right')
 			toast.display('Hello from bottom-right')
 		}
+	})
+
+	// Theme section example
+	const switchThemeButton = document.getElementById('switch-theme')
+	const themeButton = document.getElementById('theme')
+
+	switchThemeButton?.addEventListener('click', () => {
+		const toaster = document.getElementById('beru')
+		switchThemeButton.classList.toggle('active')
+
+		if (toaster?.getAttribute('theme') === 'light') {
+			toaster.setAttribute('theme', 'dark')
+			return
+		}
+
+		if (toaster?.getAttribute('theme') === 'dark') {
+			toaster.setAttribute('theme', 'light')
+			return
+		}
+
+	})
+
+	themeButton?.addEventListener('click', () => {
+		toast.display('Welcome to wc-beruland', {
+			description: 'This is my new toast'
+		})
 	})
 </script>
