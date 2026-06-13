@@ -7,6 +7,8 @@ import ParamsExample from '../components/examples/ParamsExample.astro';
 import PositionsExample from '../components/examples/PositionsExample.astro';
 import Layout from '../layouts/Layout.astro';
 import ThemeExample from '../components/examples/ThemeExample.astro';
+import TypesExample from '../components/examples/TypesExample.astro';
+import FullcolorExample from '../components/examples/FullcolorExample .astro';
 
 const usageExampleOne = `<wc-beru></wc-beru>
 <div id="app">
@@ -31,7 +33,7 @@ const optionalParamsExample = `toast.display('Hi Jhon', {
 const fullcolorExample = `<wc-beru fullcolor></wc-beru>`;
 
 const multipleToastsExampleOne = `<wc-beru id="first" position="bottom-right"></wc-beru>
-<wc-beru id="second" position="bottom-right"></wc-beru>`;
+<wc-beru id="second" position="bottom-left"></wc-beru>`;
 
 const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
     description: 'This is a message from wc-beru',
@@ -40,7 +42,11 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 ---
 
 <Layout>
-	<wc-beru id="beru" theme="light"></wc-beru>
+	<wc-beru></wc-beru>
+	<wc-beru id="beru-position"></wc-beru>
+	<wc-beru id="beru-theme" theme="light"></wc-beru>
+	<wc-beru id="beru-fullcolor" fullcolor></wc-beru>
+	<wc-beru id="beru-multiply"></wc-beru>
 	<HeroSection></HeroSection>
 	<section class="container">
 		<h2>Uso</h2>
@@ -78,11 +84,13 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 	<section class="container">
 		<h2>Tipos</h2>
 		<p>Anteriormente mencione sobre otros métodos que ofrece <span>toast</span>; en su totalidad  ofrece cinco, incluyendo <span>display</span>. Aquí te dejo una demostración usando los otros métodos disponibles:</p>
+		<TypesExample></TypesExample>
 	</section>
 	<section class="container">
 		<h2>Colores enriquecidos</h2>
 		<p><span>wc-beru</span> recibe un atributo <span>fullcolor</span>, que fuerza al toast a usar colores basados en su tipo, mejorando así su propósito visual.</p>
 		<Code code={fullcolorExample} theme="catppuccin-latte" lang="html"></Code>
+		<FullcolorExample></FullcolorExample>
 	</section>
 	<section class="container">
 		<h2>Multiples instancias de wc-beru</h2>
@@ -90,21 +98,20 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 		<Code code={multipleToastsExampleOne} theme="catppuccin-latte" lang="html"></Code>
 		<p>Ahora bien, si no especificamos en que instancia queremos renderizar nuestro toast, este tomara por defecto el primer elemento <span>wc-beru</span> que encuentre. Suponiendo que queremos renderizar el toast en nuestro elemento con el identificador <span>second</span>, procedemos a usar nuestro <span>beruId</span>:</p>
 		<Code code={multipleToastsExampleTwo} theme="catppuccin-latte" lang="js"></Code>
-		<p>Una vez seguido estos pasos, podemos probar nuestro toast:</p>
 	</section>
 </Layout>
 
 <script>
 	import { toast } from "wc-beru"
 
-	// Usage section script example
+	// Usage section example
 	const usageButton = document.getElementById('usageButton')
 
 	usageButton?.addEventListener('click', () => {
 		toast.display('👋 Hi! from wc-beru')
 	})
 
-	// Optional params secion script example
+	// Optional params secion example
 	const optionalParamsButton = document.getElementById('optional-params')
 
 	optionalParamsButton?.addEventListener('click', () => {
@@ -114,54 +121,65 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 		})
 	})
 
-	// Positoins section script example
+	// Positoins section example
 	const positionButtonsContainer = document.getElementById('positions')
 
 	function renderToaster(position: string) {
 		const toaster = document.createElement('wc-beru')
-		toaster.setAttribute('id', 'beru')
+		toaster.setAttribute('id', 'beru-position')
 		toaster.setAttribute('position', position)
 		
 		document.body.insertBefore(toaster, document.body.firstChild)
 	}
 
 	positionButtonsContainer?.addEventListener('click', (e) => {
-		const toaster = document.getElementById('beru')
+		const toaster = document.getElementById('beru-position')
 
 		if ((e.target as Element).id === 'position-top-left') {
 			toaster?.remove()
 			renderToaster('top-left')
-			toast.display('Hello from top-left')
+			toast.display('Hello from top-left', {
+				beruId: 'beru-position'
+			})
 		
 		}
 		if ((e.target as Element).id === 'position-top-center') {
 			toaster?.remove()
 			renderToaster('top-center')
-			toast.display('Hello from top-center')
-		
+			toast.display('Hello from top-center', {
+				beruId: 'beru-position'
+			})
 		}
 		if ((e.target as Element).id === 'position-top-right') {
 			toaster?.remove()
 			renderToaster('top-right')
-			toast.display('Hello from top-right')
+			toast.display('Hello from top-right', {
+				beruId: 'beru-position'
+			})
 		}
 
 		if ((e.target as Element).id === 'position-bottom-left') {
 			toaster?.remove()
 			renderToaster('bottom-left')
-			toast.display('Hello from bottom-left')
+			toast.display('Hello from bottom-left', {
+				beruId: 'beru-position'
+			})
 		
 		}
 		if ((e.target as Element).id === 'position-bottom-center') {
 			toaster?.remove()
 			renderToaster('bottom-center')
-			toast.display('Hello from bottom-center')
+			toast.display('Hello from bottom-center', {
+				beruId: 'beru-position'
+			})
 		
 		}
 		if ((e.target as Element).id === 'position-bottom-right') {
 			toaster?.remove()
 			renderToaster('bottom-right')
-			toast.display('Hello from bottom-right')
+			toast.display('Hello from bottom-right', {
+				beruId: 'beru-position'
+			})
 		}
 	})
 
@@ -170,7 +188,7 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 	const themeButton = document.getElementById('theme')
 
 	switchThemeButton?.addEventListener('click', () => {
-		const toaster = document.getElementById('beru')
+		const toaster = document.getElementById('beru-theme')
 		switchThemeButton.classList.toggle('active')
 
 		if (toaster?.getAttribute('theme') === 'light') {
@@ -187,7 +205,85 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 
 	themeButton?.addEventListener('click', () => {
 		toast.display('Welcome to wc-beruland', {
-			description: 'This is my new toast'
+			description: 'This is my new toast',
+			beruId: 'beru-theme'
 		})
+	})
+
+	// Types section example
+	const typeButtonsContainer = document.getElementById('types')
+
+	typeButtonsContainer?.addEventListener('click', (e) => {
+		
+		if ((e.target as Element).id === 'btn-default') {
+			toast.display('Hi! I am default', {
+				description: 'This is a default toast'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-success') {
+			toast.success('Hi! I am success', {
+				description: 'This is a success toast'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-warning') {
+			toast.warning('Hi! I am warning', {
+				description: 'This is a warning toast'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-info') {
+			toast.info('Hi! i am info', {
+				description: 'This is a info toast'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-error') {
+			toast.error('Hi! I am error', {
+				description: 'This is a error toast'
+			})
+		}
+	})
+
+	// Fullcolor section example
+	const fullcolorButtonsContainer = document.getElementById('fullcolor')
+
+	fullcolorButtonsContainer?.addEventListener('click', (e) => {
+		
+		if ((e.target as Element).id === 'btn-default') {
+			toast.display('Hi! I am default', {
+				description: 'This is a default toast',
+				beruId: 'beru-fullcolor'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-success') {
+			toast.success('Hi! I am success', {
+				description: 'This is a success toast',
+				beruId: 'beru-fullcolor'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-warning') {
+			toast.warning('Hi! I am warning', {
+				description: 'This is a warning toast',
+				beruId: 'beru-fullcolor'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-info') {
+			toast.info('Hi! i am info', {
+				description: 'This is a info toast',
+				beruId: 'beru-fullcolor'
+			})
+		}
+
+		if ((e.target as Element).id === 'btn-error') {
+			toast.error('Hi! I am error', {
+				description: 'This is a error toast',
+				beruId: 'beru-fullcolor'
+			})
+		}
 	})
 </script>
