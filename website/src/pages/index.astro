@@ -21,7 +21,7 @@ import * as example from '../const/usageExamples';
 	<wc-beru id="beru-multiply"></wc-beru>
 	<HeroSection></HeroSection>
 	<section class="container">
-		<h2>Uso</h2>
+		<h2>Usage</h2>
 		<p>Once installed, you need to go to your <span>index.html</span> and use the <span>wc-beru</span> tag.</p>
 		<Code code={example.usageExampleOne} theme="catppuccin-latte" lang="html"></Code>
 		<p>Assuming that a <span>wc-beru</span> tag already exists in our <span>index.html</span>, we proceed to use the following code block:</p>
@@ -32,7 +32,7 @@ import * as example from '../const/usageExamples';
 		<p>It is worth noting that <span>display</span> is not the only available method; <span>toast</span> offers other semantic methods with different styles, which you will discover later on.</p>
 	</section>
 	<section class="container">
-		<h2>Parámetros opcionales</h2>
+		<h2>Optional parameters</h2>
 		<p>The methods offered by <span>toast</span>, such as <span>display</span>, can accept optional parameters apart from the main message. Here is an example:</p>
 		<Code code={example.optionalParamsExample} theme="catppuccin-latte" lang="js"></Code>
 		<ul>
@@ -43,28 +43,28 @@ import * as example from '../const/usageExamples';
 		<ParamsExample></ParamsExample>
 	</section>
 	<section class="container">
-		<h2>Posiciones</h2>
+		<h2>Positions</h2>
 		<p>Our <span>wc-beru</span> element accepts a <span>position</span> attribute. This attribute allows us to indicate the position where we want our toast to be rendered, and there are only six possible values, which you will see below:</p>
 		<PositionsExample></PositionsExample>
 	</section>
 	<section class="container">
-		<h2>Tema</h2>
+		<h2>Theme</h2>
 		<p><span>wc-beru</span> also features a <span>theme</span> attribute that accepts two possible values: <span>light</span> (default value) and <span>dark</span>, allowing you to switch between light and dark modes when rendering the toast.</p>
 		<ThemeExample></ThemeExample>
 	</section>
 	<section class="container">
-		<h2>Tipos</h2>
+		<h2>Types</h2>
 		<p>As mentioned earlier, <span>toast</span> offers other methods; it provides five in total, including <span>display</span>. Here is a demonstration using the other available methods:</p>
 		<TypesExample></TypesExample>
 	</section>
 	<section class="container">
-		<h2>Colores enriquecidos</h2>
+		<h2>Rich colors</h2>
 		<p><span>wc-beru</span> accepts a <span>fullcolor</span> attribute, which forces the toast to use colors based on its type, thereby enhancing its visual purpose.</p>
 		<Code code={example.fullcolorExample} theme="catppuccin-latte" lang="html"></Code>
 		<FullcolorExample></FullcolorExample>
 	</section>
 	<section class="container">
-		<h2>Multiples instancias de wc-beru</h2>
+		<h2>Multiple instances of wc-beru</h2>
 		<p>As we learned previously, <span>toast</span> methods accept an object as a second parameter that allows us to add more context, render a close button, and the one we will look at right now: the <span>beruId</span>. This makes it easy to choose which <span>wc-beru</span> instance we want to render our toast in. Here is an example:</p>
 		<Code code={example.multipleToastsExampleOne} theme="catppuccin-latte" lang="html"></Code>
 		<p>However, if we do not specify which instance we want to render our toast in, it will default to the first <span>wc-beru</span> element it finds. Assuming we want to render the toast in our element with the identifier <span>second</span>, we proceed to use our <span>beruId</span>:</p>
