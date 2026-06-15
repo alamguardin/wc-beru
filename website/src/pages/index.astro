@@ -79,6 +79,26 @@ import * as example from '../const/usageExamples';
 <script>
 	import { toast } from "wc-beru"
 
+	// Copy-to-clipboard
+	async function copyNpmPackage(text: string) {
+		try {
+			await navigator.clipboard.writeText(text);
+			return 'success'
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+	const copyToClipboardButtom = document.getElementById('hero-copyToClipboard')
+	const copyToClipboardText = 'pnpm add wc-beru'
+
+	copyToClipboardButtom?.addEventListener('click', async () => {
+		const wasCopyToClipboard = await copyNpmPackage(copyToClipboardText)
+		wasCopyToClipboard ? toast.success('Copy to clipboard', {
+			beruId: 'beru-fullcolor'
+		}) : ''
+	})
+
 	// Usage section example
 	const usageButton = document.getElementById('usageButton')
 
