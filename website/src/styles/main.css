@@ -181,13 +181,15 @@ button,
 	background: var(--color-bg-secundary);
 	box-shadow: inset 0 0 0 2px var(--color-bg-primary);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 2rem;
 }
 
 .example-group {
 	width: 80%;
-	margin: auto;
+	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -241,4 +243,14 @@ button,
 
 .example-switch.active .example-switch-select {
 	transform: translateX(1.375rem);
+}
+
+.example-code {
+	width: fit-content;
+	padding: 7px 1.5rem;
+	background: var(--color-bg-primary);
+	border-radius: 0.5rem;
+	border: 1px solid var(--colot-br-default);
+	font-family: "Departure-Mono", monospace;
+	font-size: 0.875rem;
 }

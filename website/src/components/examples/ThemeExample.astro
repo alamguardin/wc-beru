@@ -5,7 +5,24 @@
         <div class="example-switch-select"></div>
     </button>
     <button class="example-button" id="theme">Try now</button>
+    <div class="example-code" id="theme-script"></div>
 </div>
 <script>
+    const themeButton = document.getElementById('switch-theme')
+    const themeCode = document.getElementById('theme-script')
 
+    const THEME_LIGHT_EXAMPLE = '<wc-beru theme="light"></wc-beru>'
+    const THEME_DARK_EXAMPLE = '<wc-beru theme="dark"></wc-beru>'
+
+    if (themeCode) themeCode.innerText = THEME_LIGHT_EXAMPLE
+
+    themeButton?.addEventListener('click', () => {
+        if (!themeCode) return
+
+        if(themeButton.classList.contains('active')) {
+            themeCode.innerText = THEME_LIGHT_EXAMPLE
+        } else {
+            themeCode.innerText = THEME_DARK_EXAMPLE
+        }
+    })
 </script>
