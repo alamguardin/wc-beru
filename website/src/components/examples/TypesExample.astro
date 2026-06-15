@@ -6,4 +6,41 @@
         <button class="example-button" id="btn-info">Info</button>
         <button class="example-button" id="btn-error">Error</button>
     </div>
+    <div class="example-code" id="types-script"></div>
 </div>
+<script>
+    const typeButtons = document.getElementById('types')
+    const typeCode = document.getElementById('types-script')
+
+    const DEFAULT_EXAMPLE = 'toast.display(\'This is a default toasts\')'
+    const SUCCESS_EXAMPLE = 'toast.display(\'This is a success toasts\')'
+    const WARNING_EXAMPLE = 'toast.display(\'This is a warning toasts\')'
+    const INFO_EXAMPLE = 'toast.display(\'This is a info toasts\')'
+    const ERROR_EXAMPLE = 'toast.display(\'This is a error toasts\')'
+
+    if (typeCode) typeCode.innerText = DEFAULT_EXAMPLE
+
+    typeButtons?.addEventListener('click', (e) => {
+        if (!typeCode) return
+
+        if ((e.target as Element).id === 'btn-default') {
+            typeCode.innerText = DEFAULT_EXAMPLE
+        }
+
+        if ((e.target as Element).id === 'btn-success') {
+            typeCode.innerText = SUCCESS_EXAMPLE
+        }
+
+        if ((e.target as Element).id === 'btn-warning') {
+            typeCode.innerText = WARNING_EXAMPLE
+        }
+
+        if ((e.target as Element).id === 'btn-info') {
+            typeCode.innerText = INFO_EXAMPLE
+        }
+
+        if ((e.target as Element).id === 'btn-error') {
+            typeCode.innerText = ERROR_EXAMPLE
+        }
+    })
+</script>
