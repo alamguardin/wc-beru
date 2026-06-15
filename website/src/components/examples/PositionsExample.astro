@@ -1,0 +1,45 @@
+<div class="example">
+    <div class="example-group" id="positions">
+        <button class="example-button" id="position-top-left">Top left</button>
+        <button class="example-button" id="position-top-center">Top center</button>
+        <button class="example-button" id="position-top-right">Top right</button>
+        <button class="example-button" id="position-bottom-left">Bottom left</button>
+        <button class="example-button" id="position-bottom-center">Bottom center</button>
+        <button class="example-button" id="position-bottom-right">Bottom right</button>
+    </div>
+    <div class="example-code" id="position-script"></div>
+</div>
+<script>
+    const positionsButtons = document.getElementById('positions')
+    const positionCode = document.getElementById('position-script')
+
+    const TOP_LEFT_EXAMPLE = '<wc-beru position="top-left"></wc-beru>'
+    const TOP_CENTER_EXAMPLE = '<wc-beru position="top-center"></wc-beru>'
+    const TOP_RIGHT_EXAMPLE = '<wc-beru position="top-right"></wc-beru>'
+    const BOTTOM_LEFT_EXAMPLE = '<wc-beru position="bottom-left"></wc-beru>'
+    const BOTTOM_CENTER_EXAMPLE = '<wc-beru position="bottom-center"></wc-beru>'
+    const BOTTOM_RIGHT_EXAMPLE = '<wc-beru position="bottom-right"></wc-beru>'
+
+    if (positionCode) positionCode.innerText = BOTTOM_RIGHT_EXAMPLE
+
+    positionsButtons?.addEventListener('click', (e) => {
+        if ((e.target as Element).id === 'position-top-left' && positionCode) {
+            positionCode.innerText = TOP_LEFT_EXAMPLE
+        }
+        if ((e.target as Element).id === 'position-top-center' && positionCode) {
+            positionCode.innerText = TOP_CENTER_EXAMPLE
+        }
+        if ((e.target as Element).id === 'position-top-right' && positionCode) {
+            positionCode.innerText = TOP_RIGHT_EXAMPLE
+        }
+        if ((e.target as Element).id === 'position-bottom-left' && positionCode) {
+            positionCode.innerText = BOTTOM_LEFT_EXAMPLE
+        }
+        if ((e.target as Element).id === 'position-bottom-center' && positionCode) {
+            positionCode.innerText = BOTTOM_CENTER_EXAMPLE
+        }
+        if ((e.target as Element).id === 'position-bottom-right' && positionCode) {
+            positionCode.innerText = BOTTOM_RIGHT_EXAMPLE
+        }
+    })
+</script>

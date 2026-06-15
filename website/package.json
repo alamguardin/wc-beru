@@ -11,5 +11,8 @@
 	"dependencies": {
 		"astro": "^5.16.5",
 		"wc-beru": "workspace:*"
+	},
+	"devDependencies": {
+		"shiki": "^4.2.0"
 	}
 }

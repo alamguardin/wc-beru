@@ -2,15 +2,15 @@
 /** biome-ignore-all lint/correctness/noUnusedImports: false positive */
 /** biome-ignore-all assist/source/organizeImports: false positive */
 import { Code } from 'astro:components';
-import HeroSection from '../components/HeroSection.astro';
-import UsageExample from '../components/examples/UsageExample.astro';
-import ParamsExample from '../components/examples/ParamsExample.astro';
-import PositionsExample from '../components/examples/PositionsExample.astro';
-import Layout from '../layouts/Layout.astro';
-import ThemeExample from '../components/examples/ThemeExample.astro';
-import TypesExample from '../components/examples/TypesExample.astro';
-import FullcolorExample from '../components/examples/FullcolorExample .astro';
-import * as example from '../const/usageExamples';
+import HeroSection from '../../components/HeroSection.astro';
+import UsageExample from '../../components/examples/UsageExample.astro';
+import ParamsExample from '../../components/examples/ParamsExample.astro';
+import PositionsExample from '../../components/examples/PositionsExample.astro';
+import Layout from '../../layouts/Layout.astro';
+import ThemeExample from '../../components/examples/ThemeExample.astro';
+import TypesExample from '../../components/examples/TypesExample.astro';
+import FullcolorExample from '../../components/examples/FullcolorExample .astro';
+import * as example from '../../const/usageExamples';
 ---
 
 <Layout>
@@ -22,52 +22,53 @@ import * as example from '../const/usageExamples';
 	<HeroSection></HeroSection>
 	<section class="container">
 		<h2>Uso</h2>
-		<p>Once installed, you need to go to your <span>index.html</span> and use the <span>wc-beru</span> tag.</p>
+		<p>Una vez instalado, debes ubicarte en tu <span>index.html</span> y usar la etiqueta <span>wc-beru</span>.</p>
 		<Code code={example.usageExampleOne} theme="catppuccin-latte" lang="html"></Code>
-		<p>Assuming that a <span>wc-beru</span> tag already exists in our <span>index.html</span>, we proceed to use the following code block:</p>
+		<p>Asumiendo que ya existe una etiqueta <span>wc-beru</span> en nuestro <span>index.html</span> procedemos a usar el siguiente bloque de código:</p>
 		<Code code={example.usageExampleTwo} theme="catppuccin-latte" lang="js"></Code>
-		<p>When importing <span>toasts</span>, it automatically detects if there is an instance of our <span>wc-beru</span> element.</p>
-		<p>In the example above, we call a <span>display</span> method, which allows us to render our toast; try it yourself:</p>
-		<UsageExample></UsageExample>
-		<p>It is worth noting that <span>display</span> is not the only available method; <span>toast</span> offers other semantic methods with different styles, which you will discover later on.</p>
+		<p>Al importar <span>toasts</span>, este por si mismo detecta si hay una instancia de nuestro elemento <span>wc-beru</span>.</p>
+		<p>En el ejemplo de arriba llamamos a un método <span>display</span>, este nos permite renderizar  nuestro toast; inténtalo tu mismo: </p>
+		<UsageExample>
+		</UsageExample>
+		<p>Cabe resaltar que <span>display</span> no es el único método disponible, <span>toast</span> ofrece otros métodos semánticos con diferentes estilos; mas adelante los conocerás.</p>
 	</section>
 	<section class="container">
 		<h2>Parámetros opcionales</h2>
-		<p>The methods offered by <span>toast</span>, such as <span>display</span>, can accept optional parameters apart from the main message. Here is an example:</p>
+		<p>Los métodos que ofrece <span>toast</span>, como <span>display</span>, pueden recibir unos parámetros opcionales  aparte del mensaje principal, aquí un ejemplo de ello:</p>
 		<Code code={example.optionalParamsExample} theme="catppuccin-latte" lang="js"></Code>
 		<ul>
-			<li><span>description</span> (string): Allows us to provide more context to the main message.</li>
-			<li><span>closeButton</span> (boolean): Renders a button to dismiss the toast.</li>
-			<li><span>beruId</span> (string): Renders the toast in a specific <span>wc-beru</span> instance; we will see an example of this later.</li>
+			<li><span>description</span> (string), nos permite dar mas contexto al mensaje principal.</li>
+			<li><span>closeButton</span> (boolean), renderiza un botón para eliminar el toast.</li>
+			<li><span>beruId</span> (string), renderiza el toast en una instancia de <span>wc-beru</span> especifica; mas adelante veremos un ejemplo.</li>
 		</ul>
 		<ParamsExample></ParamsExample>
 	</section>
 	<section class="container">
 		<h2>Posiciones</h2>
-		<p>Our <span>wc-beru</span> element accepts a <span>position</span> attribute. This attribute allows us to indicate the position where we want our toast to be rendered, and there are only six possible values, which you will see below:</p>
+		<p>Nuestro elemento <span>wc-beru</span> recibe un atributo <span>position</span>, dicho atributo nos permite indicar en que posición queremos que se renderize nuestro toast y solo existen seis posibles valores los cuales conocerás a continuación:</p>
 		<PositionsExample></PositionsExample>
 	</section>
 	<section class="container">
 		<h2>Tema</h2>
-		<p><span>wc-beru</span> also features a <span>theme</span> attribute that accepts two possible values: <span>light</span> (default value) and <span>dark</span>, allowing you to switch between light and dark modes when rendering the toast.</p>
+		<p><span>wc-beru</span> además posee un atributo <span>theme</span> el cual recibe dos posibles valores <span>light</span> (valor por defecto) y <span>dark</span>, permitiendo cambiar de modo claro a oscuro o viceversa al momento de renderizar el toast.</p>
 		<ThemeExample></ThemeExample>
 	</section>
 	<section class="container">
 		<h2>Tipos</h2>
-		<p>As mentioned earlier, <span>toast</span> offers other methods; it provides five in total, including <span>display</span>. Here is a demonstration using the other available methods:</p>
+		<p>Anteriormente mencione sobre otros métodos que ofrece <span>toast</span>; en su totalidad  ofrece cinco, incluyendo <span>display</span>. Aquí te dejo una demostración usando los otros métodos disponibles:</p>
 		<TypesExample></TypesExample>
 	</section>
 	<section class="container">
 		<h2>Colores enriquecidos</h2>
-		<p><span>wc-beru</span> accepts a <span>fullcolor</span> attribute, which forces the toast to use colors based on its type, thereby enhancing its visual purpose.</p>
+		<p><span>wc-beru</span> recibe un atributo <span>fullcolor</span>, que fuerza al toast a usar colores basados en su tipo, mejorando así su propósito visual.</p>
 		<Code code={example.fullcolorExample} theme="catppuccin-latte" lang="html"></Code>
 		<FullcolorExample></FullcolorExample>
 	</section>
 	<section class="container">
 		<h2>Multiples instancias de wc-beru</h2>
-		<p>As we learned previously, <span>toast</span> methods accept an object as a second parameter that allows us to add more context, render a close button, and the one we will look at right now: the <span>beruId</span>. This makes it easy to choose which <span>wc-beru</span> instance we want to render our toast in. Here is an example:</p>
+		<p>Como aprendimos anteriormente, los métodos de <span>toast</span> reciben un objeto como segundo parámetro que nos permite, añadir mas contexto, renderizar un botón de cierre y el que veremos en estos momentos, el <span>beruId</span>. Este nos facilita escoger en que instancia de <span>wc-beru</span> queremos renderizar nuestro toast, a continuación te dejo un ejemplo:</p>
 		<Code code={example.multipleToastsExampleOne} theme="catppuccin-latte" lang="html"></Code>
-		<p>However, if we do not specify which instance we want to render our toast in, it will default to the first <span>wc-beru</span> element it finds. Assuming we want to render the toast in our element with the identifier <span>second</span>, we proceed to use our <span>beruId</span>:</p>
+		<p>Ahora bien, si no especificamos en que instancia queremos renderizar nuestro toast, este tomara por defecto el primer elemento <span>wc-beru</span> que encuentre. Suponiendo que queremos renderizar el toast en nuestro elemento con el identificador <span>second</span>, procedemos a usar nuestro <span>beruId</span>:</p>
 		<Code code={example.multipleToastsExampleTwo} theme="catppuccin-latte" lang="js"></Code>
 	</section>
 	<footer>
