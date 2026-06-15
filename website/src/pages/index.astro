@@ -10,36 +10,7 @@ import Layout from '../layouts/Layout.astro';
 import ThemeExample from '../components/examples/ThemeExample.astro';
 import TypesExample from '../components/examples/TypesExample.astro';
 import FullcolorExample from '../components/examples/FullcolorExample .astro';
-
-const usageExampleOne = `<wc-beru></wc-beru>
-<div id="app">
-  <button id="btn">Push me</button>
-</div>
-`;
-
-const usageExampleTwo = `import { toast } from 'wc-beru';
-
-const button = document.getElementById('btn')
-
-button.addEventListener('click', () => {
-  toast.display('Hello world from WcBeru')
-})`;
-
-const optionalParamsExample = `toast.display('Hi Jhon', {
-    description: 'This is a message from wc-beru',
-    closeButton: true,
-    beruId: 'my-toast'
-})`;
-
-const fullcolorExample = `<wc-beru fullcolor></wc-beru>`;
-
-const multipleToastsExampleOne = `<wc-beru id="first" position="bottom-right"></wc-beru>
-<wc-beru id="second" position="bottom-left"></wc-beru>`;
-
-const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
-    description: 'This is a message from wc-beru',
-    beruId: 'second'
-})`;
+import * as example from '../const/usageExamples';
 ---
 
 <Layout>
@@ -52,9 +23,9 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 	<section class="container">
 		<h2>Uso</h2>
 		<p>Una vez instalado, debes ubicarte en tu <span>index.html</span> y usar la etiqueta <span>wc-beru</span>.</p>
-		<Code code={usageExampleOne} theme="catppuccin-latte" lang="html"></Code>
+		<Code code={example.usageExampleOne} theme="catppuccin-latte" lang="html"></Code>
 		<p>Asumiendo que ya existe una etiqueta <span>wc-beru</span> en nuestro <span>index.html</span> procedemos a usar el siguiente bloque de código:</p>
-		<Code code={usageExampleTwo} theme="catppuccin-latte" lang="js"></Code>
+		<Code code={example.usageExampleTwo} theme="catppuccin-latte" lang="js"></Code>
 		<p>Al importar <span>toasts</span>, este por si mismo detecta si hay una instancia de nuestro elemento <span>wc-beru</span>.</p>
 		<p>En el ejemplo de arriba llamamos a un método <span>display</span>, este nos permite renderizar  nuestro toast; inténtalo tu mismo: </p>
 		<UsageExample>
@@ -64,7 +35,7 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 	<section class="container">
 		<h2>Parámetros opcionales</h2>
 		<p>Los métodos que ofrece <span>toast</span>, como <span>display</span>, pueden recibir unos parámetros opcionales  aparte del mensaje principal, aquí un ejemplo de ello:</p>
-		<Code code={optionalParamsExample} theme="catppuccin-latte" lang="js"></Code>
+		<Code code={example.optionalParamsExample} theme="catppuccin-latte" lang="js"></Code>
 		<ul>
 			<li><span>description</span> (string), nos permite dar mas contexto al mensaje principal.</li>
 			<li><span>closeButton</span> (boolean), renderiza un botón para eliminar el toast.</li>
@@ -90,15 +61,15 @@ const multipleToastsExampleTwo = `toast.display('Hello from wc-beru', {
 	<section class="container">
 		<h2>Colores enriquecidos</h2>
 		<p><span>wc-beru</span> recibe un atributo <span>fullcolor</span>, que fuerza al toast a usar colores basados en su tipo, mejorando así su propósito visual.</p>
-		<Code code={fullcolorExample} theme="catppuccin-latte" lang="html"></Code>
+		<Code code={example.fullcolorExample} theme="catppuccin-latte" lang="html"></Code>
 		<FullcolorExample></FullcolorExample>
 	</section>
 	<section class="container">
 		<h2>Multiples instancias de wc-beru</h2>
 		<p>Como aprendimos anteriormente, los métodos de <span>toast</span> reciben un objeto como segundo parámetro que nos permite, añadir mas contexto, renderizar un botón de cierre y el que veremos en estos momentos, el <span>beruId</span>. Este nos facilita escoger en que instancia de <span>wc-beru</span> queremos renderizar nuestro toast, a continuación te dejo un ejemplo:</p>
-		<Code code={multipleToastsExampleOne} theme="catppuccin-latte" lang="html"></Code>
+		<Code code={example.multipleToastsExampleOne} theme="catppuccin-latte" lang="html"></Code>
 		<p>Ahora bien, si no especificamos en que instancia queremos renderizar nuestro toast, este tomara por defecto el primer elemento <span>wc-beru</span> que encuentre. Suponiendo que queremos renderizar el toast en nuestro elemento con el identificador <span>second</span>, procedemos a usar nuestro <span>beruId</span>:</p>
-		<Code code={multipleToastsExampleTwo} theme="catppuccin-latte" lang="js"></Code>
+		<Code code={example.multipleToastsExampleTwo} theme="catppuccin-latte" lang="js"></Code>
 	</section>
 	<footer>
 		<p>Build by <a href="https://github.com/alamguardin">Alam Guardin</a></p>
