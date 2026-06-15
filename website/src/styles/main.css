@@ -114,6 +114,7 @@ footer a {
 
 .container {
 	max-width: 40rem;
+	width: 90%;
 	margin: auto;
 }
 
@@ -258,6 +259,7 @@ footer a {
 }
 
 .example-code {
+	max-width: 95%;
 	width: fit-content;
 	padding: 7px 1.5rem;
 	background: var(--color-bg-primary);
